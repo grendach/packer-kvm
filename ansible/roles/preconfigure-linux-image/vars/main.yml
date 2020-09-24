@@ -1,0 +1,6 @@
+---
+
+common_packages: [python3, docker-ce, docker-compose, ansible]
+ubuntu2004:
+  fullupgrade: False
+

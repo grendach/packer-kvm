@@ -2,11 +2,6 @@
 
 if [ "$EUID" -ne 0 ] ; then echo "Please run as root" ; exit ; fi
 
-if [ $AWS_ACCESS_KEY == "" ] ; then
-read -p "Entrez votre AWS_ACCESS_KEY : " AWS_ACCESS_KEY
-read -p "Entrez votre AWS_SECRET_KEY : " AWS_SECRET_KEY
-fi
-
 1_virtualization_installation () {
 if [ -f /etc/debian_version ]; then
 apt-get update && apt-get -y upgrade

@@ -2,7 +2,7 @@
 autoinstall:
   version: 1
   identity: {hostname: , password: $6$.H/q8qEwTUx4IbG2$lak9X.8myLPcrlGPM7qolBFWtY/vTIQghB7puDu.ApUEArDHXo7zCUtkpSvF1ttadbqBogqXhMcv6TqLRWkCt1,
-    realname: ubuntu, username: ubuntu}
+    realname: sysadm, username: sysadm}
   keyboard:
     layout: en
     variant: us
@@ -24,7 +24,7 @@ autoinstall:
     - sed -i -e 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /target/etc/ssh/sshd_config
     - sed -i 's/^#*\(send dhcp-client-identifier\).*$/\1 = hardware;/' /target/etc/dhcp/dhclient.conf
     - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
-    - echo 'ubuntu ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/ubuntu
+    - echo 'sysadm ALL=(ALL) NOPASSWD:ALL' > /target/etc/sudoers.d/sysadm
     - sed -ie 's/GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="net.ifnames=0 ipv6.disable=1 biosdevname=0"/' /target/etc/default/grub
     - curtin in-target --target /target update-grub2
   packages:
